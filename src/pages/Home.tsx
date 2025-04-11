@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import styles from "../styles/Home.module.css";
 
 interface FuturamaCharacter {
   id: number;
@@ -42,24 +43,39 @@ export const Home = () => {
   }, []);
 
   return (
-    <>
-      <h1>Futurama Characters</h1>
-      <ul>
-        {futuramaCharacters.map((character) => (
-          <li key={`character-${character.id}`}>
-            <img
-              src={character.images.main}
-              alt={`{character.name.first} {character.name.last}`}
-            />
-            <h3>
-              {character.name.first} {character.name.last}
-            </h3>
-            <Link to={`/character/${character.id}`}>
-              <button> See character</button>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </>
+    <main className={styles.main}>
+      <h1>Welcome to the World of Futurama!</h1>
+      <p>
+        Meet the wildest crew of the 31st century! From Fry to Bender, and of
+        course the brilliant (and slightly mad) Professor Farnsworth — discover
+        your favorite characters from the Futurama universe. Click on any card
+        to learn more about their story, quotes, and out-of-this-world
+        adventures.
+      </p>
+      {futuramaCharacters ? (
+        <ul className={styles.cardsContainer}>
+          {futuramaCharacters.map((character) => (
+            <li key={`character-${character.id}`} className={styles.card}>
+              <img
+                src={character.images.main}
+                alt={`{character.name.first} {character.name.last}`}
+                className={styles.cardImg}
+              />
+              <h3>
+                {character.name.first} {character.name.last}
+              </h3>
+              <Link
+                to={`/character/${character.id}`}
+                className={styles.cardBtn}
+              >
+                See Character
+              </Link>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <section className={styles.loading}>Loading character...</section>
+      )}
+    </main>
   );
 };

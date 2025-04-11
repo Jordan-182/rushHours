@@ -1,0 +1,9 @@
+.globalFooter {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--header-Color);
+  color: var(--text-color);
+  margin-top: auto;
+}

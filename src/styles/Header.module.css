@@ -1,0 +1,12 @@
+.globalHeader {
+  height: 90px;
+  background: var(--header-Color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}

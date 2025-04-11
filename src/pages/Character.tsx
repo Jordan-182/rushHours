@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
+import styles from "../styles/Character.module.css";
 
 interface FuturamaCharacter {
   id: number;
@@ -41,30 +42,54 @@ export const Character = () => {
   }, [id]);
   return (
     <>
-      {character ? (
-        <section>
-          <img
-            src={character.images.main}
-            alt={`{character.name.first} {character.name.last}`}
-          />
-          <h1>
-            {character.name.first} {character.name.last}
-          </h1>
-          <p>Age : {character.age}</p>
-          <p>Gender : {character.gender}</p>
-          <p>Species: {character.species}</p>
-          <p>Home Planet : {character.homePlanet}</p>
-          <p>Job : {character.occupation}</p>
-          <p>Quotes :</p>
-          <ul>
-            {character.sayings.map((quote) => (
-              <li>{quote}</li>
-            ))}
-          </ul>
-        </section>
-      ) : (
-        <section>404 : Character not found</section>
-      )}
+      <main className={styles.main}>
+        <div className={styles.backLink}>
+          <Link to={`/`}>&larr; Back to Home</Link>
+        </div>
+        {character ? (
+          <section className={styles.container}>
+            <article className={styles.characterCard}>
+              <img
+                src={character.images.main}
+                alt={`{character.name.first} {character.name.last}`}
+              />
+              <h2>
+                {character.name.first} {character.name.last}
+              </h2>
+              <p>
+                <strong>Age : </strong>
+                {character.age}
+              </p>
+              <p>
+                <strong>Gender : </strong>
+                {character.gender}
+              </p>
+              <p>
+                <strong>Species: </strong>
+                {character.species}
+              </p>
+              <p>
+                <strong>Home Planet : </strong>
+                {character.homePlanet}
+              </p>
+              <p>
+                <strong>Job : </strong>
+                {character.occupation}
+              </p>
+            </article>
+            <article className={styles.quotesSection}>
+              <h3>{character.name.last}'s Famous Quotes :</h3>
+              <ul className={styles.quotesList}>
+                {character.sayings.map((quote) => (
+                  <li>{quote}</li>
+                ))}
+              </ul>
+            </article>
+          </section>
+        ) : (
+          <section className={styles.loading}>Loading character...</section>
+        )}
+      </main>
     </>
   );
 };
