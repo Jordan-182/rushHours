@@ -44,7 +44,6 @@ export const Home = () => {
 
   return (
     <main className={styles.main}>
-      <h1>Welcome to the World of Futurama!</h1>
       <p>
         Meet the wildest crew of the 31st century! From Fry to Bender, and of
         course the brilliant (and slightly mad) Professor Farnsworth — discover
