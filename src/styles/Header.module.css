@@ -1,12 +1,60 @@
 .globalHeader {
-  height: 90px;
-  background: var(--header-Color);
+  height: 50vh;
+  background: linear-gradient(
+      to bottom right,
+      rgba(38, 62, 92, 0.5),
+      rgba(255, 255, 255, 0.1)
+    ),
+    url(../assets/banner.jpeg) center -100px / cover no-repeat;
   display: flex;
+  flex-direction: column;
+  color: #fff;
   align-items: center;
   justify-content: center;
+  box-shadow: 0px 5px 5px rgba(38, 62, 92, 0.5);
+}
+
+.headerTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: -50%;
+  font-size: 1.5rem;
 }
 
 .logo {
-  height: 60px;
+  height: 80px;
   width: auto;
+}
+
+@media screen and (max-width: 900px) {
+  .globalHeader {
+    background: linear-gradient(
+        to bottom right,
+        rgba(38, 62, 92, 0.8),
+        rgba(38, 62, 92, 0.5)
+      ),
+      url(../assets/banner.jpeg) center center / cover no-repeat;
+  }
+
+  .headerTitle {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .globalHeader {
+    background: linear-gradient(
+        to bottom right,
+        rgba(38, 62, 92, 0.8),
+        rgba(38, 62, 92, 0.5)
+      ),
+      url(../assets/banner.jpeg) right center / cover no-repeat;
+  }
+  .logo {
+    height: 50px;
+  }
 }
