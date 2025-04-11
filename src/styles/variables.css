@@ -1,0 +1,17 @@
+/* Font Import */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Global Variables */
+:root {
+  --title-font: "Montserrat", sans-serif;
+  --main-font: "Roboto", sans-serif;
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --header-Color: #263e5c;
+  --border-radius: 5px;
+  --spacing-XS: 1rem;
+  --spacing-S: 2rem;
+  --spacing-M: 4rem;
+  --spacing-L: 6rem;
+  --spacing-XL: 8rem;
+}

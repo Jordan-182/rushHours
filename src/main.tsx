@@ -5,7 +5,7 @@ import App from "./App.tsx";
 import "./styles/index.css";
 
 // Pages import
-import { Article } from "./pages/Article.tsx";
+import { Character } from "./pages/Character.tsx";
 import { Home } from "./pages/Home.tsx";
 
 // Router creation
@@ -18,8 +18,8 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/article",
-        element: <Article />,
+        path: "/character/:id",
+        element: <Character />,
       },
     ],
   },

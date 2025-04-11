@@ -1,0 +1,69 @@
+.main {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, rgba(38, 62, 92, 0.2), #fff);
+}
+
+.backLink {
+  margin: 1rem auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+.container {
+  padding: var(--spacing-S);
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-M);
+}
+
+.characterCard {
+  flex: none;
+  border: 2px solid var(--header-Color);
+  border-radius: 5px;
+  height: fit-content;
+  width: 300px;
+  padding: var(--spacing-S);
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+
+  img {
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+.quotesList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  gap: 0.3rem;
+  max-width: 85ch;
+  list-style: inside;
+  font-style: italic;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .quotesList {
+    max-width: 65ch;
+  }
+}

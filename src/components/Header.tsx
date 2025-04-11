@@ -1,3 +1,10 @@
+import logo from "../assets/futuramaLogo.png";
+import styles from "../styles/Header.module.css";
+
 export const Header = () => {
-  return <h1>Header</h1>;
+  return (
+    <header className={styles.globalHeader}>
+      <img src={logo} alt="Futurama Logo" className={styles.logo} />
+    </header>
+  );
 };
